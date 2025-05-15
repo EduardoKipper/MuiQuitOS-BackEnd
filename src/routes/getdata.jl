@@ -18,7 +18,7 @@ function init_data_csv()
             user=String[],
             cep=String[],
             intensity=Int[],
-            date=String[]  # ou Date[], se estiver usando Dates
+            date=Date[]
         )
         CSV.write(DATA_CSV, sample)
         println("Created sample data.csv")

@@ -11,7 +11,7 @@ const USERS_CSV = joinpath(@__DIR__, "..", "..", "database", "users.csv")
 function init_users_csv()
     dir = dirname(USERS_CSV)
     if !isdir(dir)
-        mkpath(dir)  # Cria o diretório se não existir
+        mkpath(dir)
     end
 
     if !isfile(USERS_CSV)
