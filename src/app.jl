@@ -1,5 +1,5 @@
 include("./routes/login.jl")
-include("./routes/getdata.jl")
+include("./routes/data.jl")
 
 using HTTP
 using Logging
@@ -16,7 +16,9 @@ function main()
         if request.method == "POST" && request.target == "/login"
             return login_handler(request)
         elseif request.method == "GET" && request.target == "/data"
-            return data_handler(request)
+            return get_data_handler(request)
+        elseif request.method == "POST" && request.target == "/data"
+            return post_data_handler(request)
         else
             return HTTP.Response(404, "Not Found")
         end
