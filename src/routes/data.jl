@@ -31,11 +31,14 @@ function get_data_handler(req::HTTP.Request)
 end
 
 function post_data_handler(req::HTTP.Request)
-
     try
-        payload = String(req.body)
+        payload = String(req.body)  # Converte bytes para string
 
-        obj = JSON.parse(req.body)
+        if isempty(payload)
+            return HTTP.Response(400, "Request body is empty")
+        end
+
+        obj = JSON.parse(payload)  # Usa a string convertida aqui
 
         user_val = get(obj, "user", "")
         cep_val = get(obj, "cep", "")
@@ -54,7 +57,6 @@ function post_data_handler(req::HTTP.Request)
 
         return HTTP.Response(200, "Data saved")
     catch e
-        # Imprime exceção e stacktrace para debug
         println(">>> EXCEÇÃO NO data_handler: ", e)
         for (i, frame) in enumerate(catch_backtrace())
             println("  $i) ", frame)
