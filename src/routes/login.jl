@@ -5,12 +5,20 @@ using JSON
 using CSV
 using DataFrames
 
-const USERS_CSV = "users.csv"
+const USERS_CSV = joinpath(@__DIR__, "..", "..", "database", "users.csv")
+
 
 function init_users_csv()
+    dir = dirname(USERS_CSV)
+    if !isdir(dir)
+        mkpath(dir)
+    end
+
     if !isfile(USERS_CSV)
-        sample = DataFrame(user=["alice", "bob", "carol"],
-                           password=["pass123", "secret", "qwerty"])
+        sample = DataFrame(
+            user=String[],
+            password=String[]
+        )
         CSV.write(USERS_CSV, sample)
         println("Created sample users.csv")
     end
