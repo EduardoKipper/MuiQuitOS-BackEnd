@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="27.0.5">
   <diagram name="Página-1" id="t0hOrykavEFBV3Ww9KOO">
-    <mxGraphModel dx="1783" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1884" dy="670" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -91,10 +91,10 @@
         <mxCell id="T03BukqpaiRdbYDBWtXl-69" value="Inserção usuário no banco de usuários" style="rounded=1;whiteSpace=wrap;html=1;" parent="T03BukqpaiRdbYDBWtXl-52" vertex="1">
           <mxGeometry x="36.5" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="T03BukqpaiRdbYDBWtXl-12" value="Registro de mosquito" style="rounded=1;whiteSpace=wrap;html=1;" parent="T03BukqpaiRdbYDBWtXl-52" vertex="1">
+        <mxCell id="T03BukqpaiRdbYDBWtXl-12" value="Registro de focos" style="rounded=1;whiteSpace=wrap;html=1;" parent="T03BukqpaiRdbYDBWtXl-52" vertex="1">
           <mxGeometry x="36.5" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="T03BukqpaiRdbYDBWtXl-14" value="Busca de registros de mosquitos" style="rounded=1;whiteSpace=wrap;html=1;" parent="T03BukqpaiRdbYDBWtXl-52" vertex="1">
+        <mxCell id="T03BukqpaiRdbYDBWtXl-14" value="Busca de registros de focos" style="rounded=1;whiteSpace=wrap;html=1;" parent="T03BukqpaiRdbYDBWtXl-52" vertex="1">
           <mxGeometry x="36.5" y="140" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="T03BukqpaiRdbYDBWtXl-57" value="Bancos (Postgress)" style="swimlane;whiteSpace=wrap;html=1;strokeColor=default;" parent="1" vertex="1">
@@ -104,7 +104,7 @@
           <mxGeometry x="55" y="40" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="T03BukqpaiRdbYDBWtXl-38" value="Dados&lt;div&gt;Usuários&lt;/div&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="T03BukqpaiRdbYDBWtXl-57" vertex="1">
-          <mxGeometry x="55" y="260" width="60" height="80" as="geometry" />
+          <mxGeometry x="55" y="230" width="60" height="80" as="geometry" />
         </mxCell>
         <mxCell id="T03BukqpaiRdbYDBWtXl-58" value="Sistema Externo" style="swimlane;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="900" y="510" width="170" height="120" as="geometry" />
@@ -155,13 +155,6 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="ItCXGaQWiWDyow_1RAYs-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T03BukqpaiRdbYDBWtXl-14" target="T03BukqpaiRdbYDBWtXl-26">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="985" y="240" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="ItCXGaQWiWDyow_1RAYs-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T03BukqpaiRdbYDBWtXl-3" target="T03BukqpaiRdbYDBWtXl-18">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
@@ -208,6 +201,13 @@
         </mxCell>
         <mxCell id="ItCXGaQWiWDyow_1RAYs-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T03BukqpaiRdbYDBWtXl-8" target="T03BukqpaiRdbYDBWtXl-48">
           <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ItCXGaQWiWDyow_1RAYs-56" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="T03BukqpaiRdbYDBWtXl-26" target="T03BukqpaiRdbYDBWtXl-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="980" y="240" />
+            </Array>
+          </mxGeometry>
         </mxCell>
       </root>
     </mxGraphModel>
