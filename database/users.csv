@@ -1,0 +1,13 @@
+name,email,password,type
+Zac,zac@gmail.com,1234,admin
+Test,test@gmail.com,1234,common
+Cleber,cleber@gmail.com,1234,authority
+Ana,ana.silva@gmail.com,senha123,common
+Carlos,carlos.souza@gmail.com,senha123,common
+Julia,julia.martins@gmail.com,senha123,common
+Marina,marina.oliveira@gmail.com,senha123,common
+Pedro,pedro.silva@gmail.com,senha123,common
+Lucas,lucas.costa@gmail.com,senha123,common
+Rafael,rafael.pereira@gmail.com,senha123,common
+Beatriz,beatriz.fernandes@gmail.com,senha123,common
+Joao,joao.santos@gmail.com,senha123,authority

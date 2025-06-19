@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Demo API MuiQuitOS-BackEnd</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    :root {
+      --primary: #1dd072;
+      --background: #f5f5f5;
+      --secondary-bg: #1dd072;
+      --text: #000;
+      --card-bg: #fff;
+      --border: #cce;
+      --shadow: 0 2px 16px 0 rgba(29,208,114,0.08);
+    }
+    html, body { height: 100%; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      min-height: 100vh;
+      transition: background 0.3s;
+    }
+    h1 { color: var(--primary); margin-bottom: 8px; }
+    h2 { color: var(--primary); margin-top: 0; }
+    .endpoint {
+      border: 1.5px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 16px;
+      margin-bottom: 32px;
+      padding: 24px 20px 18px 20px;
+      box-shadow: var(--shadow);
+      transition: box-shadow 0.3s, border 0.3s;
+      animation: fadeIn 0.7s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    label { display: block; margin-top: 10px; font-weight: 500; }
+    input, select, textarea {
+      width: 100%;
+      margin-top: 2px;
+      margin-bottom: 12px;
+      padding: 8px 10px;
+      border-radius: 6px;
+      border: 1.5px solid #d0d0d0;
+      font-size: 1em;
+      background: #fafafa;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border: 1.5px solid var(--primary);
+      outline: none;
+      box-shadow: 0 0 0 2px #1dd07233;
+    }
+    button {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 22px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px 0 #1dd07222;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 6px;
+    }
+    button:hover {
+      background: #13b05e;
+      transform: translateY(-2px) scale(1.03);
+    }
+    .resp {
+      background: #eafaf2;
+      border: 1.5px solid var(--primary);
+      border-radius: 6px;
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 0.97em;
+      min-height: 32px;
+      word-break: break-all;
+      transition: background 0.3s, border 0.3s;
+      animation: fadeIn 0.5s;
+    }
+    .flex {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+    .flex > div {
+      flex: 1 1 260px;
+      min-width: 220px;
+      margin-bottom: 10px;
+    }
+    .small { font-size: 0.97em; color: #444; margin-bottom: 18px; }
+    .success { color: #1a7f37; font-weight: 600; }
+    .error { color: #b30000; font-weight: 600; }
+    @media (max-width: 900px) {
+      .flex { flex-direction: column; gap: 0; }
+      .endpoint { padding: 16px 8px; }
+    }
+    ::selection { background: #b6f5d2; }
+  </style>
+</head>
+<body>
+  <h1>Demo Interativa da API MuiQuitOS-BackEnd</h1>
+  <p class="small">Preencha os campos e clique nos botões para testar as rotas da API.<br>O backend deve estar rodando em <b>http://localhost:8080</b>.</p>
+
+  <div class="endpoint">
+    <h2>🔑 Login</h2>
+    <label>Nome: <input id="login_name" type="text" value="ana.silva" /></label>
+    <label>Senha: <input id="login_pass" type="password" value="senha123" /></label>
+    <button onclick="login()">POST /login</button>
+    <div id="login_resp" class="resp"></div>
+  </div>
+
+  <div class="endpoint">
+    <h2>👤 Usuários</h2>
+    <div class="flex">
+      <div>
+        <h3>Listar</h3>
+        <button onclick="getUsers()">GET /users</button>
+        <div id="users_resp" class="resp"></div>
+      </div>
+      <div>
+        <h3>Criar</h3>
+        <label>Nome: <input id="user_name" type="text" value="Maria Demo" /></label>
+        <label>Email: <input id="user_email" type="email" value="maria.demo@gmail.com" /></label>
+        <label>Senha: <input id="user_password" type="password" value="senha123" /></label>
+        <label>Tipo:
+          <select id="user_type">
+            <option value="common">common</option>
+            <option value="authority">authority</option>
+            <option value="admin">admin</option>
+          </select>
+        </label>
+        <button onclick="createUser()">POST /users</button>
+        <div id="user_create_resp" class="resp"></div>
+      </div>
+      <div>
+        <h3>Deletar</h3>
+        <label>Email: <input id="user_del_email" type="email" value="maria.demo@gmail.com" /></label>
+        <button onclick="deleteUser()">DELETE /users</button>
+        <div id="user_del_resp" class="resp"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="endpoint">
+    <h2>🦟 Registros</h2>
+    <div class="flex">
+      <div>
+        <h3>Listar</h3>
+        <button onclick="getRegisters()">GET /registers</button>
+        <div id="registers_resp" class="resp"></div>
+      </div>
+      <div>
+        <h3>Criar</h3>
+        <label>User ID (email): <input id="reg_user_id" type="email" value="ana.silva@gmail.com" /></label>
+        <label>CEP: <input id="reg_cep" type="text" value="88015-700" /></label>
+        <label>Data/Hora: <input id="reg_datetime" type="datetime-local" value="2025-06-01T10:00" /></label>
+        <label>Intensidade (1-10): <input id="reg_intensity" type="number" min="1" max="10" value="5" /></label>
+        <label>Evidence: <input id="reg_evidence" type="text" value="" /></label>
+        <button onclick="createRegister()">POST /registers</button>
+        <div id="reg_create_resp" class="resp"></div>
+      </div>
+      <div>
+        <h3>Deletar</h3>
+        <label>User ID (email): <input id="reg_del_user_id" type="email" value="ana.silva@gmail.com" /></label>
+        <label>CEP: <input id="reg_del_cep" type="text" value="88015-700" /></label>
+        <label>Data/Hora: <input id="reg_del_datetime" type="datetime-local" value="2025-06-01T10:00" /></label>
+        <button onclick="deleteRegister()">DELETE /registers</button>
+        <div id="reg_del_resp" class="resp"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const api = 'http://localhost:8080';
+    function showResp(id, resp, ok) {
+      document.getElementById(id).innerHTML = `<span class="${ok ? 'success' : 'error'}">${resp.status} ${resp.statusText}</span><br><pre>${JSON.stringify(resp.data, null, 2)}</pre>`;
+    }
+    async function login() {
+      const name = document.getElementById('login_name').value;
+      const password = document.getElementById('login_pass').value;
+      const resp = await fetch(api + '/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, password })
+      });
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('login_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function getUsers() {
+      const resp = await fetch(api + '/users');
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('users_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function createUser() {
+      const name = document.getElementById('user_name').value;
+      const email = document.getElementById('user_email').value;
+      const password = document.getElementById('user_password').value;
+      const type = document.getElementById('user_type').value;
+      const resp = await fetch(api + '/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password, type })
+      });
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('user_create_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function deleteUser() {
+      const email = document.getElementById('user_del_email').value;
+      const resp = await fetch(api + '/users', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email })
+      });
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('user_del_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function getRegisters() {
+      const resp = await fetch(api + '/registers');
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('registers_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function createRegister() {
+      const user_id = document.getElementById('reg_user_id').value;
+      const cep = document.getElementById('reg_cep').value;
+      const datetime = document.getElementById('reg_datetime').value;
+      const intensity = parseInt(document.getElementById('reg_intensity').value);
+      const evidence = document.getElementById('reg_evidence').value;
+      const resp = await fetch(api + '/registers', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id, cep, datetime, intensity, evidence })
+      });
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('reg_create_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+    async function deleteRegister() {
+      const user_id = document.getElementById('reg_del_user_id').value;
+      const cep = document.getElementById('reg_del_cep').value;
+      const datetime = document.getElementById('reg_del_datetime').value;
+      const resp = await fetch(api + '/registers', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ user_id, cep, datetime })
+      });
+      let data = await resp.text();
+      try { data = JSON.parse(data); } catch {}
+      showResp('reg_del_resp', {status: resp.status, statusText: resp.statusText, data}, resp.ok);
+    }
+  </script>
+</body>
+</html>
