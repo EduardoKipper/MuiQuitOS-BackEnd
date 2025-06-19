@@ -2,6 +2,7 @@ module MuiQuitOSBackEnd
 
 include("models/user.jl")
 include("models/register.jl")
+using .RegisterModule: Register
 include("controllers/users_controller.jl")
 include("controllers/registers_controller.jl")
 include("controllers/login_controller.jl")

@@ -8,7 +8,7 @@ mutable struct Register
     cep::String
     datetime::DateTime
     intensity::Int
-    evidence::String
+    evidence::Union{Nothing, String}
 end
 
 end

@@ -10,7 +10,7 @@ const USERS_CSV = joinpath(PROJECT_ROOT, "database", "users.csv")
 
 function read_registers()
     df = CSV.read(REGISTERS_CSV, DataFrame; dateformat="yyyy-mm-ddTHH:MM:SS")
-    return [Register(row.user_id, row.cep, DateTime(row.datetime), Int(row.intensity), row.evidence) for row in eachrow(df)]
+    return [Register(row.user_id, row.cep, DateTime(row.datetime), Int(row.intensity), ismissing(row.evidence) ? nothing : row.evidence) for row in eachrow(df)]
 end
 
 function write_registers(registers)
@@ -18,7 +18,7 @@ function write_registers(registers)
                     cep = [r.cep for r in registers],
                     datetime = [Dates.format(r.datetime, "yyyy-mm-ddTHH:MM:SS") for r in registers],
                     intensity = [r.intensity for r in registers],
-                    evidence = [r.evidence for r in registers])
+                    evidence = [r.evidence === nothing ? "" : r.evidence for r in registers])
     CSV.write(REGISTERS_CSV, df)
 end
 
