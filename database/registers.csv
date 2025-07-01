@@ -1,51 +1,51 @@
-user_id,cep,datetime,intensity,evidence
-ana.silva@gmail.com,88015-700,2025-06-01T10:00:00,7,
-carlos.souza@gmail.com,88020-001,2025-06-02T14:30:00,2,
-julia.martins@gmail.com,88025-200,2025-06-03T09:15:00,5,
-marina.oliveira@gmail.com,88030-000,2025-06-04T16:45:00,8,
-pedro.silva@gmail.com,88035-001,2025-06-05T11:20:00,3,
-lucas.costa@gmail.com,88040-400,2025-06-06T13:10:00,6,
-rafael.pereira@gmail.com,88050-000,2025-06-07T08:00:00,9,
-beatriz.fernandes@gmail.com,88060-000,2025-06-08T17:30:00,1,
-joao.santos@gmail.com,88070-000,2025-06-09T15:00:00,4,
-cleber@gmail.com,88075-000,2025-06-10T12:00:00,10,
-ana.silva@gmail.com,88015-700,2025-06-11T09:00:00,2,
-carlos.souza@gmail.com,88020-001,2025-06-12T18:30:00,5,
-julia.martins@gmail.com,88025-200,2025-06-13T07:45:00,8,
-marina.oliveira@gmail.com,88030-000,2025-06-14T19:15:00,3,
-pedro.silva@gmail.com,88035-001,2025-06-15T20:20:00,6,
-lucas.costa@gmail.com,88040-400,2025-06-16T21:10:00,9,
-rafael.pereira@gmail.com,88050-000,2025-06-17T22:00:00,1,
-beatriz.fernandes@gmail.com,88060-000,2025-06-18T23:30:00,4,
-joao.santos@gmail.com,88070-000,2025-06-19T08:00:00,7,
-cleber@gmail.com,88075-000,2025-06-20T10:00:00,10,
-ana.silva@gmail.com,88015-700,2025-07-01T08:30:00,5,
-carlos.souza@gmail.com,88020-001,2025-07-02T12:45:00,8,
-julia.martins@gmail.com,88025-200,2025-07-03T14:10:00,3,
-marina.oliveira@gmail.com,88030-000,2025-07-04T16:00:00,6,
-pedro.silva@gmail.com,88035-001,2025-07-05T18:20:00,9,
-lucas.costa@gmail.com,88040-400,2025-07-06T20:00:00,1,
-rafael.pereira@gmail.com,88050-000,2025-07-07T09:30:00,4,
-beatriz.fernandes@gmail.com,88060-000,2025-07-08T11:15:00,7,
-joao.santos@gmail.com,88070-000,2025-07-09T13:40:00,10,
-cleber@gmail.com,88075-000,2025-07-10T15:50:00,2,
-ana.silva@gmail.com,88015-700,2025-07-11T17:05:00,5,
-carlos.souza@gmail.com,88020-001,2025-07-12T19:25:00,8,
-julia.martins@gmail.com,88025-200,2025-07-13T21:35:00,3,
-marina.oliveira@gmail.com,88030-000,2025-07-14T08:10:00,6,
-pedro.silva@gmail.com,88035-001,2025-07-15T10:20:00,9,
-lucas.costa@gmail.com,88040-400,2025-07-16T12:30:00,1,
-rafael.pereira@gmail.com,88050-000,2025-07-17T14:40:00,4,
-beatriz.fernandes@gmail.com,88060-000,2025-07-18T16:50:00,7,
-joao.santos@gmail.com,88070-000,2025-07-19T18:00:00,10,
-cleber@gmail.com,88075-000,2025-07-20T20:10:00,2,
-ana.silva@gmail.com,88015-700,2025-08-01T09:00:00,5,
-carlos.souza@gmail.com,88020-001,2025-08-02T11:10:00,8,
-julia.martins@gmail.com,88025-200,2025-08-03T13:20:00,3,
-marina.oliveira@gmail.com,88030-000,2025-08-04T15:30:00,6,
-pedro.silva@gmail.com,88035-001,2025-08-05T17:40:00,9,
-lucas.costa@gmail.com,88040-400,2025-08-06T19:50:00,1,
-rafael.pereira@gmail.com,88050-000,2025-08-07T21:00:00,4,
-beatriz.fernandes@gmail.com,88060-000,2025-08-08T08:10:00,7,
-joao.santos@gmail.com,88070-000,2025-08-09T10:20:00,10,
-cleber@gmail.com,88075-000,2025-08-10T12:30:00,2,
+register_id,user_id,cep,datetime,intensity,evidence,latitude,longitude,city,state,neighbourhood,access_difficulty,focus_size,larvae
+1,ana.silva@gmail.com,88015-700,2025-06-01T10:00:00,6.8,,-27.5935,-48.5585,"Florianópolis","SC","Centro",7,8,true
+2,carlos.souza@gmail.com,88020-001,2025-06-02T14:30:00,2,,-27.5975,-48.5494,"Florianópolis","SC","Centro",2,5,false
+3,julia.martins@gmail.com,88025-200,2025-06-03T09:15:00,5,,-27.5895,-48.5433,"Florianópolis","SC","Agronômica",5,3,false
+4,marina.oliveira@gmail.com,88030-000,2025-06-04T16:45:00,8,,-27.5855,-48.5144,"Florianópolis","SC","Itacorubi",8,7,false
+5,pedro.silva@gmail.com,88035-001,2025-06-05T11:20:00,3,,-27.5943,-48.5036,"Florianópolis","SC","Santa Mônica",3,6,false
+6,lucas.costa@gmail.com,88040-400,2025-06-06T13:10:00,6,,-27.6007,-48.5196,"Florianópolis","SC","Trindade",6,9,false
+7,rafael.pereira@gmail.com,88050-000,2025-06-07T08:00:00,9,,-27.5012,-48.4375,"Florianópolis","SC","Ingleses do Rio Vermelho",9,1,false
+8,beatriz.fernandes@gmail.com,88060-000,2025-06-08T17:30:00,1,,-27.6389,-48.4333,"Florianópolis","SC","Barra da Lagoa",1,4,false
+9,joao.santos@gmail.com,88070-000,2025-06-09T15:00:00,4,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",4,2,false
+10,cleber@gmail.com,88075-000,2025-06-10T12:00:00,10,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",10,10,false
+11,ana.silva@gmail.com,88015-700,2025-06-11T09:00:00,2,,-27.5935,-48.5585,"Florianópolis","SC","Centro",2,8,false
+12,carlos.souza@gmail.com,88020-001,2025-06-12T18:30:00,5,,-27.5975,-48.5494,"Florianópolis","SC","Centro",5,5,false
+13,julia.martins@gmail.com,88025-200,2025-06-13T07:45:00,8,,-27.5895,-48.5433,"Florianópolis","SC","Agronômica",8,3,false
+14,marina.oliveira@gmail.com,88030-000,2025-06-14T19:15:00,3,,-27.5855,-48.5144,"Florianópolis","SC","Itacorubi",3,7,false
+15,pedro.silva@gmail.com,88035-001,2025-06-15T20:20:00,6,,-27.5943,-48.5036,"Florianópolis","SC","Santa Mônica",6,6,false
+16,lucas.costa@gmail.com,88040-400,2025-06-16T21:10:00,9,,-27.6007,-48.5196,"Florianópolis","SC","Trindade",9,9,false
+17,rafael.pereira@gmail.com,88050-000,2025-06-17T22:00:00,1,,-27.5012,-48.4375,"Florianópolis","SC","Ingleses do Rio Vermelho",1,1,false
+18,beatriz.fernandes@gmail.com,88060-000,2025-06-18T23:30:00,4,,-27.6389,-48.4333,"Florianópolis","SC","Barra da Lagoa",4,4,false
+19,joao.santos@gmail.com,88070-000,2025-06-19T08:00:00,7,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",7,2,false
+20,cleber@gmail.com,88075-000,2025-06-20T10:00:00,10,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",10,10,false
+21,ana.silva@gmail.com,88015-700,2025-07-01T08:30:00,5,,-27.5935,-48.5585,"Florianópolis","SC","Centro",5,8,false
+22,carlos.souza@gmail.com,88020-001,2025-07-02T12:45:00,8,,-27.5975,-48.5494,"Florianópolis","SC","Centro",8,5,false
+23,julia.martins@gmail.com,88025-200,2025-07-03T14:10:00,3,,-27.5895,-48.5433,"Florianópolis","SC","Agronômica",3,3,false
+24,marina.oliveira@gmail.com,88030-000,2025-07-04T16:00:00,6,,-27.5855,-48.5144,"Florianópolis","SC","Itacorubi",6,7,false
+25,pedro.silva@gmail.com,88035-001,2025-07-05T18:20:00,9,,-27.5943,-48.5036,"Florianópolis","SC","Santa Mônica",9,6,false
+26,lucas.costa@gmail.com,88040-400,2025-07-06T20:00:00,1,,-27.6007,-48.5196,"Florianópolis","SC","Trindade",1,9,false
+27,rafael.pereira@gmail.com,88050-000,2025-07-07T09:30:00,4,,-27.5012,-48.4375,"Florianópolis","SC","Ingleses do Rio Vermelho",4,1,false
+28,beatriz.fernandes@gmail.com,88060-000,2025-07-08T11:15:00,7,,-27.6389,-48.4333,"Florianópolis","SC","Barra da Lagoa",7,4,false
+29,joao.santos@gmail.com,88070-000,2025-07-09T13:40:00,10,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",10,2,false
+30,cleber@gmail.com,88075-000,2025-07-10T15:50:00,2,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",2,10,false
+31,ana.silva@gmail.com,88015-700,2025-07-11T17:05:00,5,,-27.5935,-48.5585,"Florianópolis","SC","Centro",5,8,false
+32,carlos.souza@gmail.com,88020-001,2025-07-12T19:25:00,8,,-27.5975,-48.5494,"Florianópolis","SC","Centro",8,5,false
+33,julia.martins@gmail.com,88025-200,2025-07-13T21:35:00,3,,-27.5895,-48.5433,"Florianópolis","SC","Agronômica",3,3,false
+34,marina.oliveira@gmail.com,88030-000,2025-07-14T08:10:00,6,,-27.5855,-48.5144,"Florianópolis","SC","Itacorubi",6,7,false
+35,pedro.silva@gmail.com,88035-001,2025-07-15T10:20:00,9,,-27.5943,-48.5036,"Florianópolis","SC","Santa Mônica",9,6,false
+36,lucas.costa@gmail.com,88040-400,2025-07-16T12:30:00,1,,-27.6007,-48.5196,"Florianópolis","SC","Trindade",1,9,false
+37,rafael.pereira@gmail.com,88050-000,2025-07-17T14:40:00,4,,-27.5012,-48.4375,"Florianópolis","SC","Ingleses do Rio Vermelho",4,1,false
+38,beatriz.fernandes@gmail.com,88060-000,2025-07-18T16:50:00,7,,-27.6389,-48.4333,"Florianópolis","SC","Barra da Lagoa",7,4,false
+39,joao.santos@gmail.com,88070-000,2025-07-19T18:00:00,10,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",10,2,false
+40,cleber@gmail.com,88075-000,2025-07-20T20:10:00,2,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",2,10,false
+41,ana.silva@gmail.com,88015-700,2025-08-01T09:00:00,5,,-27.5935,-48.5585,"Florianópolis","SC","Centro",5,8,false
+42,carlos.souza@gmail.com,88020-001,2025-08-02T11:10:00,8,,-27.5975,-48.5494,"Florianópolis","SC","Centro",8,5,false
+43,julia.martins@gmail.com,88025-200,2025-08-03T13:20:00,3,,-27.5895,-48.5433,"Florianópolis","SC","Agronômica",3,3,false
+44,marina.oliveira@gmail.com,88030-000,2025-08-04T15:30:00,6,,-27.5855,-48.5144,"Florianópolis","SC","Itacorubi",6,7,false
+45,pedro.silva@gmail.com,88035-001,2025-08-05T17:40:00,9,,-27.5943,-48.5036,"Florianópolis","SC","Santa Mônica",9,6,false
+46,lucas.costa@gmail.com,88040-400,2025-08-06T19:50:00,1,,-27.6007,-48.5196,"Florianópolis","SC","Trindade",1,9,false
+47,rafael.pereira@gmail.com,88050-000,2025-08-07T21:00:00,4,,-27.5012,-48.4375,"Florianópolis","SC","Ingleses do Rio Vermelho",4,1,false
+48,beatriz.fernandes@gmail.com,88060-000,2025-08-08T08:10:00,7,,-27.6389,-48.4333,"Florianópolis","SC","Barra da Lagoa",7,4,false
+49,joao.santos@gmail.com,88070-000,2025-08-09T10:20:00,10,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",10,2,false
+50,cleber@gmail.com,88075-000,2025-08-10T12:30:00,2,,-27.5915,-48.5836,"Florianópolis","SC","Estreito",2,10,false
