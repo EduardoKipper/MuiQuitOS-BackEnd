@@ -68,29 +68,29 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
 ### 🦟 Registros
 - `GET /registers` — Lista todos os registros
 - `POST /registers` — Cria registro
-  - **Body:** `{ "user_id": "string", "cep": "string", "datetime": "string", "intensity": "string", "evidence": "string" }`
+  - **Body:** `{ "user_id": "string", "cep": "string", "datetime": "string", "intensity": float, "evidence": "string", "latitude": float, "longitude": float, "city": "string", "state": "string", "neighbourhood": "string", "access_difficulty": int, "focus_size": int, "larvae": boolean }`
 - `PUT /registers` — Atualiza registro
-  - **Body:** igual ao POST
+  - **Body:** `{ "register_id": int, "user_id": "string", "cep": "string", "datetime": "string", "intensity": float, "evidence": "string", "latitude": float, "longitude": float, "city": "string", "state": "string", "neighbourhood": "string", "access_difficulty": int, "focus_size": int, "larvae": boolean }`
 - `DELETE /registers` — Remove registro
-  - **Body:** `{ "user_id": "string", "cep": "string", "datetime": "string" }`
+  - **Body:** `{ "register_id": int }`
 
 ## 📋 Tabela de Endpoints da API
 
-| Método | Rota         | Descrição                        | Body/Parâmetros                                                                 | Resposta Exemplo           |
-|--------|--------------|-----------------------------------|---------------------------------------------------------------------------------|----------------------------|
-| POST   | /login       | Login de usuário                  | `{ "name": "string", "password": "string" }`                                 | 200 OK (usuário), 401      |
-| GET    | /users       | Lista todos os usuários           | -                                                                               | 200 OK (lista usuários)    |
-| POST   | /users       | Cria novo usuário                 | `{ "name": "string", "email": "string", "password": "string", "type": "string" }` | 201 Created, 409 (duplicado) |
-| PUT    | /users       | Atualiza usuário                  | `{ "name": "string", "email": "string", "password": "string", "type": "string" }` | 200 OK                     |
-| DELETE | /users       | Remove usuário                    | `{ "email": "string" }`                                                        | 200 OK                     |
-| GET    | /registers   | Lista todos os registros          | -                                                                               | 200 OK (lista registros)   |
-| POST   | /registers   | Cria novo registro de mosquito    | `{ "user_id": "string", "cep": "string", "datetime": "string", "intensity": int, "evidence": "string" }` | 201 Created, 400 (user_id inválido) |
-| PUT    | /registers   | Atualiza registro                 | igual ao POST                                                                    | 200 OK                     |
-| DELETE | /registers   | Remove registro                   | `{ "user_id": "string", "cep": "string", "datetime": "string" }`                    | 200 OK                     |
+| Método | Rota         | Descrição                        | Body/Parâmetros                                                                                                                                                                                           | Resposta Exemplo           |
+|--------|--------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------|
+| POST   | /login       | Login de usuário                  | `{ "name": "string", "password": "string" }`                                                                                                                                                             | 200 OK (usuário), 401      |
+| GET    | /users       | Lista todos os usuários           | -                                                                                                                                                                                                         | 200 OK (lista usuários)    |
+| POST   | /users       | Cria novo usuário                 | `{ "name": "string", "email": "string", "password": "string", "type": "string" }`                                                                                                                            | 201 Created, 409 (duplicado) |
+| PUT    | /users       | Atualiza usuário                  | `{ "name": "string", "email": "string", "password": "string", "type": "string" }`                                                                                                                            | 200 OK                     |
+| DELETE | /users       | Remove usuário                    | `{ "email": "string" }`                                                                                                                                                                                  | 200 OK                     |
+| GET    | /registers   | Lista todos os registros          | -                                                                                                                                                                                                         | 200 OK (lista registros)   |
+| POST   | /registers   | Cria novo registro de mosquito    | `{ "user_id": "string", "cep": "string", "datetime": "string", "intensity": float, "evidence": "string", "latitude": float, "longitude": float, "city": "string", "state": "string", "neighbourhood": "string", "access_difficulty": int, "focus_size": int, "larvae": boolean }` | 201 Created, 400 (user_id inválido) |
+| PUT    | /registers   | Atualiza registro                 | `{ "register_id": int, "user_id": "string", "cep": "string", "datetime": "string", "intensity": float, "evidence": "string", "latitude": float, "longitude": float, "city": "string", "state": "string", "neighbourhood": "string", "access_difficulty": int, "focus_size": int, "larvae": boolean }` | 200 OK                     |
+| DELETE | /registers   | Remove registro                   | `{ "register_id": int }`                                                                                                                                                                                 | 200 OK                     |
 
 > **Observação:**
 > - Todos os bodies devem ser enviados em JSON.
-> - O campo `intensity` em `/registers` deve ser um número inteiro de 1 a 10.
+> - O campo `intensity` em `/registers` é um número de ponto flutuante.
 > - O campo `user_id` deve ser um email válido cadastrado em `/users`.
 
 ## ℹ️ Observações
