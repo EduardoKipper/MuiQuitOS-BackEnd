@@ -41,7 +41,6 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
    ```
 
    ### O backend estará disponível em: http://localhost:8080 🚀
-   > Você pode testar ele através do arquivo "api_demo.html"
 
 ## 📁 Estrutura dos Arquivos
 - `database/users.csv`: 👤 Usuários do sistema
