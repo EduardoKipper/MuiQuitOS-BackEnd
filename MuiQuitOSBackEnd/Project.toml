@@ -5,8 +5,10 @@ version = "0.1.0"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
+Cairo = "159f3aea-2a34-519c-b102-8c37f9878175"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
+Fontconfig = "186bb1d3-e1f7-5a2c-a377-96d770f13627"
 Gadfly = "c91e804a-d5a3-530f-b6f0-dfbca275c004"
 HTTP = "cd3eb016-35fb-5094-929b-558a96fad6f3"
 JSON3 = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
@@ -18,8 +20,10 @@ StatsPlots = "f3b207a7-027a-5e70-b257-86293d7955fd"
 
 [compat]
 CSV = "0.10.15"
+Cairo = "1.1.1"
 DataFrames = "1.7.0"
 Dates = "1.11.0"
+Fontconfig = "0.4.1"
 Gadfly = "1.4.1"
 HTTP = "1.10.16"
 JSON3 = "1.14.3"
