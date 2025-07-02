@@ -3,6 +3,14 @@ using HTTP
 using Sockets
 using JSON3
 
+# Gera os gráficos ao iniciar o app
+try
+    MuiQuitOSBackEnd.RegistersGraphsController.generate_registers_graphs()
+    println("Gráficos gerados em ./cache")
+catch e
+    @warn "Erro ao gerar gráficos" exception=(e, catch_backtrace())
+end
+
 function router(req)
     res = users_routes(req)
     if res !== nothing
