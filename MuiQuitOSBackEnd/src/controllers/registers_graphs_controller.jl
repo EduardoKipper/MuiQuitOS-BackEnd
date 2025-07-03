@@ -80,37 +80,37 @@ function generate_registers_graphs()
     # Gráficos com Gadfly.jl
     # =====================
 
-    # println("Iniciando geração dos gráficos exploratórios com Gadfly...")
-    # green_theme = Gadfly.Theme(
-    #     default_color="forestgreen",
-    #     panel_fill="mintcream",
-    #     key_title_color="darkgreen",
-    #     major_label_color="darkgreen",
-    #     minor_label_color="seagreen",
-    #     grid_color="lightgreen",
-    #     highlight_width=2pt,
-    #     bar_spacing=30px,
-    #     boxplot_spacing=30px
-    # )
-    # # 1. Boxplot da intensidade por bairro
-    # p1 = Gadfly.plot(df, x=:neighbourhood, y=:intensity, Gadfly.Geom.boxplot, Gadfly.Guide.title("Intensidade por Bairro"), Gadfly.Guide.xlabel("Bairro"), Gadfly.Guide.ylabel("Intensidade"), green_theme)
-    # Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "boxplot_intensity_by_neighbourhood.png"), 600, 400), p1)
-    # println("Boxplot de intensidade por bairro gerado.")
-    # # 2. Histograma da intensidade dos registros
-    # p2 = Gadfly.plot(df, x=:intensity, Gadfly.Geom.histogram(bincount=10), Gadfly.Guide.title("Histograma da Intensidade dos Registros"), Gadfly.Guide.xlabel("Intensidade"), Gadfly.Guide.ylabel("Frequência"), green_theme)
-    # Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "histogram_intensity.png"), 600, 400), p2)
-    # println("Histograma da intensidade dos registros gerado.")
-    # # 3. Scatter plot de latitude vs longitude colorido por bairro
-    # p3 = Gadfly.plot(df, x=:longitude, y=:latitude, color=:neighbourhood, Gadfly.Geom.point, Gadfly.Guide.title("Localização dos Registros por Bairro"), Gadfly.Guide.xlabel("Longitude"), Gadfly.Guide.ylabel("Latitude"), green_theme)
-    # Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "scatter_lat_long_by_neighbourhood.png"), 600, 400), p3)
-    # println("Scatter plot de localização dos registros gerado.")
-    # # 4. Média da intensidade por bairro (bar plot)
-    # mean_intensity = combine(groupby(df, :neighbourhood), :intensity => mean => :mean_intensity)
-    # mean_intensity_sorted = sort(mean_intensity, :mean_intensity)
-    # p4 = Gadfly.plot(mean_intensity_sorted, x=:neighbourhood, y=:mean_intensity, Gadfly.Geom.bar, Gadfly.Guide.title("Média da Intensidade por Bairro"), Gadfly.Guide.xlabel("Bairro"), Gadfly.Guide.ylabel("Média da Intensidade"), green_theme)
-    # Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "barplot_mean_intensity_by_neighbourhood.png"), 600, 400), p4)
-    # println("Barplot da média de intensidade por bairro gerado.")
-    # println("Gráficos exploratórios com Gadfly finalizados.")
+    println("Iniciando geração dos gráficos exploratórios com Gadfly...")
+    green_theme = Gadfly.Theme(
+        default_color="forestgreen",
+        panel_fill="mintcream",
+        key_title_color="darkgreen",
+        major_label_color="darkgreen",
+        minor_label_color="seagreen",
+        grid_color="lightgreen",
+        highlight_width=2pt,
+        bar_spacing=30px,
+        boxplot_spacing=30px
+    )
+    # 1. Boxplot da intensidade por bairro
+    p1 = Gadfly.plot(df, x=:neighbourhood, y=:intensity, Gadfly.Geom.boxplot, Gadfly.Guide.title("Intensidade por Bairro"), Gadfly.Guide.xlabel("Bairro"), Gadfly.Guide.ylabel("Intensidade"), green_theme)
+    Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "boxplot_intensity_by_neighbourhood.png"), 600, 400), p1)
+    println("Boxplot de intensidade por bairro gerado.")
+    # 2. Histograma da intensidade dos registros
+    p2 = Gadfly.plot(df, x=:intensity, Gadfly.Geom.histogram(bincount=10), Gadfly.Guide.title("Histograma da Intensidade dos Registros"), Gadfly.Guide.xlabel("Intensidade"), Gadfly.Guide.ylabel("Frequência"), green_theme)
+    Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "histogram_intensity.png"), 600, 400), p2)
+    println("Histograma da intensidade dos registros gerado.")
+    # 3. Scatter plot de latitude vs longitude colorido por bairro
+    p3 = Gadfly.plot(df, x=:longitude, y=:latitude, color=:neighbourhood, Gadfly.Geom.point, Gadfly.Guide.title("Localização dos Registros por Bairro"), Gadfly.Guide.xlabel("Longitude"), Gadfly.Guide.ylabel("Latitude"), green_theme)
+    Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "scatter_lat_long_by_neighbourhood.png"), 600, 400), p3)
+    println("Scatter plot de localização dos registros gerado.")
+    # 4. Média da intensidade por bairro (bar plot)
+    mean_intensity = combine(groupby(df, :neighbourhood), :intensity => mean => :mean_intensity)
+    mean_intensity_sorted = sort(mean_intensity, :mean_intensity)
+    p4 = Gadfly.plot(mean_intensity_sorted, x=:neighbourhood, y=:mean_intensity, Gadfly.Geom.bar, Gadfly.Guide.title("Média da Intensidade por Bairro"), Gadfly.Guide.xlabel("Bairro"), Gadfly.Guide.ylabel("Média da Intensidade"), green_theme)
+    Gadfly.draw(Gadfly.PNG(joinpath(CACHE_DIR, "barplot_mean_intensity_by_neighbourhood.png"), 600, 400), p4)
+    println("Barplot da média de intensidade por bairro gerado.")
+    println("Gráficos exploratórios com Gadfly finalizados.")
     
     
     return nothing
