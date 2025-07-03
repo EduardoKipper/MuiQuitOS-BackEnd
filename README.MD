@@ -99,3 +99,10 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
 - Ideal para MVP e testes rápidos ⚡.
 
 ---
+
+## Comandos experimentais
+
+- Criar usuário: curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d '{"name": "Maria Souza", "email": "maria.souza@example.com", "password": "password123", "type": "agente"}'
+- Buscar usuários: curl -X GET http://localhost:8080/users
+- Fazer registro de mosquito: curl -X POST http://localhost:8080/registers -H "Content-Type: application/json" -d '{"user_id": "maria.souza@example.com", "cep": "20000-000", "datetime": "2025-07-03T14:30:00Z", "intensity": 0.8, "evidence": "foto_pneu.jpg", "latitude": -22.9068, "longitude": -43.1729, "city": "Rio de Janeiro", "state": "RJ", "neighbourhood": "Centro", "access_difficulty": 2, "focus_size": 3, "larvae": true}'
+- Buscar registros de mosquito: curl -X GET http://localhost:8080/registers
