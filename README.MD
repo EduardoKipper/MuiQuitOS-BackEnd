@@ -18,7 +18,7 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
 
 3. **Instale as dependências do pacote:**
    Feche o terminal anterior e abra um novo.
-   No novo terminal, entre na pasta do pacote:
+   No novo terminal, entre na pasta do pacot~e:
    ```sh
    cd MuiQuitOSBackEnd
    ```
@@ -26,10 +26,20 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
    ```sh
    julia
    ] activate .
-   add CSV DataFrames JSON3 HTTP Sockets
+   add CSV DataFrames JSON3 HTTP Sockets Statistics StatsBase Plots Gadfly Dates
    ```
+   > **Observação:**
+   > O pacote `Dates` agora é utilizado para manipulação de datas e geração dos gráficos temporais.
 
-4. **Execute o servidor:**
+4. **Geração automática de gráficos:**
+   Ao executar o backend, três gráficos são gerados automaticamente na pasta `cache/`:
+   - `registers_by_neighbourhood_pie.png`: Registros por bairro (gráfico de pizza)
+   - `registers_by_time_of_day_line.png`: Registros por hora do dia (gráfico de linha)
+   - `registers_by_month_line.png`: Registros por mês (gráfico de linha)
+
+   Durante a geração dos gráficos, mensagens informativas são exibidas no console indicando o início e o término de cada gráfico.
+
+5. **Execute o servidor:**
    Com as etapas anteriores feitas, toda vez que quiser executar o servidor basta executar, em ordem:
    ```sh
    julia
