@@ -112,7 +112,7 @@ Backend MVP em Julia para registro e controle de focos do mosquito Aedes Aegypti
 
 ## Comandos experimentais
 
-- Criar usuário: curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d '{"name": "Maria Souza", "email": "maria.souza@example.com", "password": "password123", "type": "agente"}'
+- Criar usuário: curl -X POST http://localhost:8080/users -H "Content-Type: application/json" -d "{\"name\": \"Nome Exemplo\", \"email\": \"exemplo@email.com\", \"password\": \"senha123\", \"type\": \"user\"}"
 - Buscar usuários: curl -X GET http://localhost:8080/users
-- Fazer registro de mosquito: curl -X POST http://localhost:8080/registers -H "Content-Type: application/json" -d '{"user_id": "maria.souza@example.com", "cep": "20000-000", "datetime": "2025-07-03T14:30:00Z", "intensity": 0.8, "evidence": "foto_pneu.jpg", "latitude": -22.9068, "longitude": -43.1729, "city": "Rio de Janeiro", "state": "RJ", "neighbourhood": "Centro", "access_difficulty": 2, "focus_size": 3, "larvae": true}'
+- Fazer registro de mosquito: curl -X POST http://localhost:8080/registers -H "Content-Type: application/json" -d "{\"user_id\": \"exemplo@email.com\", \"cep\": \"88015-700\", \"datetime\": \"2025-07-01T10:00:00\", \"intensity\": 6.8, \"evidence\": null, \"latitude\": -27.5935, \"longitude\": -48.5585, \"city\": \"Florianópolis\", \"state\": \"SC\", \"neighbourhood\": \"Centro\", \"access_difficulty\": 7, \"focus_size\": 8, \"larvae\": true}"
 - Buscar registros de mosquito: curl -X GET http://localhost:8080/registers
